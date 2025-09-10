@@ -1,10 +1,12 @@
 import { projects } from "../../data/projects";
+import Image from "next/image";
+import Link from "next/link";
 
-interface Props {
-  params: { slug: string }
+interface ProjectPageProps {
+  params: { slug: string };
 }
 
-export default function ProjectPage({ params }: Props) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -13,9 +15,11 @@ export default function ProjectPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
-      <img
+      <Image
         src={project.image}
         alt={project.title}
+        width={800}
+        height={400}
         className="w-full h-64 object-cover rounded-2xl shadow mb-6"
       />
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
@@ -34,12 +38,12 @@ export default function ProjectPage({ params }: Props) {
         <span className="text-sm text-gray-500">{project.date}</span>
       </div>
 
-      <a
+      <Link
         href="/#projects"
         className="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-lg shadow hover:scale-105 transition"
       >
         ← Back to Projects
-      </a>
+      </Link>
     </div>
   );
 }
