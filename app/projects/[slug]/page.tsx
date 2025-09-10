@@ -2,13 +2,7 @@ import { projects } from "../../data/projects";
 import Image from "next/image";
 import Link from "next/link";
 
-// ✅ Let Next.js know all valid slugs at build time
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
+// ✅ This matches Next.js App Router expectations
 export default function ProjectPage({
   params,
 }: {
