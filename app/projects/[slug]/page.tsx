@@ -2,7 +2,14 @@ import { projects } from "../../data/projects";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function ProjectPage({
+// ✅ Let Next.js know all valid slugs at build time
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export default function ProjectPage({
   params,
 }: {
   params: { slug: string };
