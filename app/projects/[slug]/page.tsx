@@ -2,13 +2,15 @@ import { projects } from "../../data/projects";
 import Image from "next/image";
 import Link from "next/link";
 
-// ✅ This matches Next.js App Router expectations
-export default function ProjectPage({
+export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  // ✅ Await the params because Next.js types it as a Promise
+  const { slug } = await params;
+
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return <div className="p-10 text-center">Project not found</div>;
