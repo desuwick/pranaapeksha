@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image"; // ✅ Optimized images
 import { projects } from "../data/projects";
 
 export default function Projects() {
@@ -15,9 +16,11 @@ export default function Projects() {
               className="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={500}   // ✅ must define width
+                height={300}  // ✅ must define height
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">

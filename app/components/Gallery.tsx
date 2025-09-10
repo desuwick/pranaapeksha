@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ Optimized images
 
 const images = [
   "/gallery/donation1.jpg",
@@ -19,13 +20,15 @@ export default function Gallery() {
         {images.map((src, idx) => (
           <motion.div
             key={idx}
-            className="overflow-hidden rounded-2xl shadow hover:shadow-lg transition"
+            className="overflow-hidden rounded-2xl shadow hover:shadow-lg transition cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
-            <img
+            <Image
               src={src}
               alt={`Gallery image ${idx + 1}`}
-              className="w-full h-48 object-cover hover:scale-105 transition-transform"
+              width={400} // ✅ You can tweak width/height
+              height={300}
+              className="w-full h-48 object-cover hover:scale-105 transition-transform rounded-2xl"
             />
           </motion.div>
         ))}

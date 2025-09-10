@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Facebook, Instagram } from "lucide-react";
+import Image from "next/image"; // ✅ Optimized images
 
 export default function Footer() {
   return (
@@ -42,7 +43,13 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-primary transition"
         >
-          <img src="/icons/tiktok.svg" alt="TikTok" className="w-6 h-6" />
+          <Image
+            src="/icons/tiktok.svg"
+            alt="TikTok"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
         </a>
       </div>
     </motion.footer>
