@@ -19,7 +19,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Prana Apeksha Foundation 🌿
+          Prana Apeksha Foundation 
         </motion.h1>
 
         <motion.p

@@ -33,8 +33,8 @@ export default function Contact() {
         viewport={{ once: true }}
       >
         <p><span className="font-semibold">Address:</span> Wickrama Hardware Stores Pvt Ltd, Embilipitiya, Sri Lanka</p>
-        <p><span className="font-semibold">Phone:</span> +94 71 123 4567</p>
-        <p><span className="font-semibold">Email:</span> pranaapeksha.foundation@gmail.com</p>
+        <p><span className="font-semibold">Phone:</span> +94 71 5400 247</p>
+        <p><span className="font-semibold">Email:</span> contact@pranaapeksha.org-</p>
       </motion.div>
 
       {/* ✅ Contact Form */}

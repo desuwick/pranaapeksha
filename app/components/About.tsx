@@ -32,7 +32,7 @@ export default function About() {
       >
         We provide essential donations such as{" "}
         <span className="text-primary font-semibold">
-          coconuts, pomegranates, and medicines
+          king coconuts, pomegranates, and medicines
         </span>{" "}
         to patients in need, with the belief that good nutrition and care play a vital role in recovery.
       </motion.p>
